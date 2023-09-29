@@ -3,7 +3,7 @@ version: '3.1'
 services:
 
   wordpress:
-    container_name: wp-1  
+    container_name: wordpress  
     image: wordpress:latest
     restart: "always"
     ports:
@@ -17,7 +17,7 @@ services:
       WORDPRESS_DB_NAME: wordpress
 
   db:
-    container_name: mysql-1  
+    container_name: mysql 
     image: mysql:8.0
     command: --default-authentication-plugin=mysql_native_password  
     restart: "always"
@@ -30,7 +30,7 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
 
   phpmyadmin: 
-    container_name: phpmyadmin-1     
+    container_name: phpmyadmin     
     depends_on:      
     - db    
     image: phpmyadmin/phpmyadmin    
@@ -41,7 +41,7 @@ services:
     restart: "always"
     
   mailhog:
-    container_name: mailhog-1 
+    container_name: mailhog
     image: mailhog/mailhog:latest
     restart: "always"
     ports:
